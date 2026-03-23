@@ -76,6 +76,7 @@ body {
 
     /* ===== tamanhos ===== */
     --fs-title-up: clamp(48px, 6vw, 100px);
+    --fs-title-t: clamp(42px, 6vw, 100px);
     --fs-title: clamp(32px, 5vw, 64px);
     --fs-sub-title: clamp(20px, 3vw, 32px);
     --fs-sub: clamp(18px, 3vw, 32px);
@@ -88,84 +89,36 @@ body {
 }
 
 
-main {
-    height: 100vh;
+.menu-inferior {
     width: 100%;
-    background-image: url('/img/bg-index.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    align-items: center;
-    justify-content: center;
+    background: var(--clr-white);
+    border-top: 1px solid var(--clr-primary-soft);
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 
-    #container-initial {
-        padding: 1em;
-        height: 100%;
+    .menu-item {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #333333;
+        font-size: 0.8em;
+        font-family: Arial, sans-serif;
+        gap: 0.2em;
 
-        .container-logo {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-
-            img {
-                width: 150px;
-            }
+        .material-symbols-outlined {
+            font-size: 2em;
+            color: var(--clr-gray);
+            margin-bottom: .2em;
         }
 
-        #container {
-            height: 40%;
-            display: flex;
-            gap: 1em;
-            flex-direction: column;
-
-            .container-title {
-                text-align: center;
-
-
-
-
-                p {
-                    color: var(--clr-black-gray);
-                    font-weight: var(--fw-title);
-                    font-size: var(--fs-title);
-                }
-
-                p:nth-child(2) {
-                    color: var(--clr-primary-dark);
-                }
-            }
-
-            .container-sub-title {
-                text-align: center;
-                color: var(--clr-black-gray);
-                font-size: var(--fs-sub);
-            }
-
-            .button-initial {
-                display: flex;
-                flex-direction: column;
-                margin: 2em;
-
-                gap: 1em;
-
-                button {
-                    background-color: var(--clr-primary-dark);
-                    padding: 1em;
-                    border-radius: 2em;
-                    border: none;
-                    color: var(--clr-black-gray);
-                }
-
-                button:nth-child(2) {
-                    background-color: var(--clr-primary-light);
-                    color: var(--clr-black-gray);
-                }
-            }
+        .menu-texto {
+            color: var(--clr-gray);
+            font-size: 0.9em;
         }
     }
+
 }
