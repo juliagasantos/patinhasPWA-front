@@ -52,9 +52,11 @@ body {
 
   /* ===== cor principal (laranja pet) ===== */
   --clr-primary: #ff7a00;
+  --clr-primary-transparent: #ffb67152;
   --clr-primary-dark: #e66b00;
   --clr-primary-light: #ffa94d;
   --clr-primary-soft: #fff1e6;
+  --clr-primary-soft-one: #fff9f4;
 
   /* ===== fundo/bege ===== */
   --clr-beige: #ffe0c2;
@@ -86,41 +88,79 @@ body {
   --fw-title: 700;
   --fw-sub: 600;
   --fw-regular: 400;
+
+  /* ===== shadow ===== */
+  --shadow-soft:
+    0 0 0 1px rgba(0, 0, 0, 0.02), 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 10px 15px -3px rgba(0, 0, 0, 0.03);
+  --shadow-hover:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
 }
 
-.menu-inferior {
-  width: 100%;
-  background: var(--clr-white);
-  border-top: 1px solid var(--clr-primary-soft);
-  padding: 0.5em 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  .menu-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #333333;
-    font-size: 0.8em;
-    font-family: Arial, sans-serif;
-    gap: 0.2em;
 
-    .material-symbols-outlined {
-      font-size: 2em;
-      color: var(--clr-gray);
-      margin-bottom: 0.2em;
-    }
 
-    .menu-texto {
-      color: var(--clr-gray);
-      font-size: 0.9em;
+/* coreção */
+.status {
+  border-radius: 1em;
+  font-size: var(--fs-sub);
+  padding: 1em;
+
+}
+
+/* Pendente */
+.status--pending {
+  background-color: #fff8db;
+  color: #b08900;
+}
+
+/* Finalizado */
+.status--finished {
+  background-color: #e6f9f0;
+  color: #1b7f5a;
+}
+
+/* Cancelado */
+.status--canceled {
+  background-color: #fdeaea;
+  color: #b42318;
+}
+
+/* Técnico */
+.status--tech {
+  background-color: #e8f1fd;
+  color: #1d4ed8;
+}
+
+main {
+  #background-service {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    margin: 0 1em;
+    .type-service {
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      padding: 1em;
+      border-radius: 1em;
+      background-color: var(--clr-white);
+      .status-serviceType {
+        ul {
+          display: flex;
+          justify-content: space-between;
+          li {
+            .type-service-card {
+              color: var(--clr-primary-dark);
+              font-size: var(--fs-sub);
+              font-weight: var(--fw-sub);
+            }
+          }
+          .status-service {
+                p{
+                }
+          }
+        }
+      }
     }
   }
 }
