@@ -449,7 +449,7 @@ main {
                 justify-content: center;
 
                 img {
-                    width: 340px;
+                    /* width: 340px; */
                     border-radius: 2em;
                 }
             }
