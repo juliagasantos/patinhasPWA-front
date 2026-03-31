@@ -1,0 +1,210 @@
+* {
+    font-family: "ABeeZee", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 400;
+    padding-left: 0;
+    font-size: clamp(16px, 3vw, 32px);
+}
+
+/* --- Reset global para ignorar o Bootstrap --- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li,
+p {
+    padding-left: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+}
+
+:root {
+    /* ===== neutros ===== */
+    --clr-black: #000000;
+    --clr-black-gray: #252525;
+    --clr-gray: #929292;
+    --clr-gray-light: #b4b4b4;
+    --clr-gray-lighter: #dddddd;
+    --clr-cloud-white: #f5f5f5;
+    --clr-white: #ffffff;
+    --clr-silver: #e9e9e9;
+    --clr-transparent: transparent;
+
+    /* ===== cor principal (laranja pet) ===== */
+    --clr-primary: #ff7a00;
+    --clr-primary-transparent: #ffb67152;
+    --clr-primary-dark: #e66b00;
+    --clr-primary-light: #ffa94d;
+    --clr-primary-soft: #fff1e6;
+    --clr-primary-soft-one: #fff9f4;
+
+    /* ===== fundo/bege ===== */
+    --clr-beige: #ffe0c2;
+    --clr-beige-light: #fff5eb;
+    --clr-beige-soft: #fff8f2;
+
+    /* ===== apoio (azul suave igual imagem) ===== */
+    --clr-accent-blue: #a1c0cc;
+    --clr-accent-blue-soft: #e9f3f6;
+
+    /* ===== apoio (verde suave igual imagem) ===== */
+    --clr-accent-green: #0da808;
+    --clr-accent-green-soft: #ebf6e9;
+
+    /* ===== gradientes ===== */
+    --clr-gradient-main: linear-gradient(90deg, #ffe0c2, #ffffff);
+    --clr-gradient-soft: linear-gradient(180deg, #fff5eb, #ffffff);
+
+    /* ===== textos ===== */
+    --clr-text-main: #333333;
+    --clr-text-muted: #7a7a7a;
+    --clr-text-light: #ffffff;
+
+    /* ===== tamanhos ===== */
+    --fs-title-up: clamp(48px, 6vw, 100px);
+    --fs-title-t: clamp(42px, 6vw, 100px);
+    --fs-title: clamp(32px, 5vw, 64px);
+    --fs-sub-title: clamp(20px, 3vw, 32px);
+    --fs-sub: clamp(18px, 3vw, 32px);
+    --fs-normal: clamp(16px, 3vw, 16px);
+
+    /* ===== pesos ===== */
+    --fw-title: 700;
+    --fw-sub: 600;
+    --fw-regular: 400;
+
+    /* ===== shadow ===== */
+    --shadow-soft:
+        0 0 0 1px rgba(0, 0, 0, 0.02), 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+        0 10px 15px -3px rgba(0, 0, 0, 0.03);
+    --shadow-hover:
+        0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+
+/* coreção */
+
+/* Pendente */
+.status--pending {
+    background-color: #fff8db;
+    color: #b08900;
+}
+
+/* Finalizado */
+.status--finished {
+    background-color: #e6f9f0;
+    color: #1b7f5a;
+}
+
+/* Cancelado */
+.status--canceled {
+    background-color: #fdeaea;
+    color: #b42318;
+}
+
+/* Técnico */
+.status--tech {
+    background-color: #e8f1fd;
+    color: #1d4ed8;
+}
+
+main {
+    height: 100vh;
+    padding-top: 5em;
+    padding-bottom: 4em;
+    margin: 0 1em;
+
+
+    .profile-header {
+        background: linear-gradient(135deg,
+                var(--clr-primary),
+                var(--clr-primary-light));
+
+        border-radius: 20px;
+        padding: 2em 1em;
+        text-align: center;
+        color: var(--clr-text-light);
+
+        .avatar {
+
+
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 100%;
+            }
+        }
+
+        p:nth-child(2){
+            font-size: var(--fs-sub);
+        }
+
+    }
+
+    .profile-menu {
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+
+        .menu-item {
+
+            button {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 1em;
+
+                padding: 1.2em;
+                border-radius: 16px;
+
+                background: var(--clr-white);
+                box-shadow: var(--shadow-soft);
+
+                cursor: pointer;
+                transition: 0.3s;
+                border: none;
+
+                span {
+                    font-size: 30px;
+                    color: var(--clr-primary);
+                }
+
+                p {
+                    font-size: var(--fs-normal);
+                    color: var(--clr-text-main);
+                }
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: var(--shadow-hover);
+                }
+            }
+
+
+
+
+        }
+    }
+
+}
