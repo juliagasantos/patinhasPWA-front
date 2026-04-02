@@ -120,13 +120,15 @@ body {
 }
 
 main {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  margin: 0 1em;
   #product-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 4em;
-    padding-bottom: 4em;
-    margin: 0 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
     gap: 2em;
 
     .title-product {
@@ -140,6 +142,7 @@ main {
         p {
           font-size: var(--fs-title);
           font-weight: var(--fw-title);
+          color: var(--clr-primary-dark);
         }
 
         p:nth-child(2) {
@@ -151,58 +154,149 @@ main {
     }
 
     .card-product-bg {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      .card-product {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: var(--shadow-soft);
-        border-radius: 1.5em;
-        padding: 1em;
-        gap: 1em;
-        background-color: var(--clr-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
 
-        .img-card {
-          img {
-            box-shadow: var(--shadow-soft);
-            border-radius: 1.5em;
-            width: 100px;
-          }
+      .img-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          border-radius: 2em;
         }
 
-        .info-card {
+        p {
+          position: absolute;
+          bottom: 0;
+          left: 0;
           width: 100%;
+          margin: 0;
+          padding: 0.4em !important;
+          background: linear-gradient(
+            135deg,
+            var(--clr-primary),
+            var(--clr-primary-light)
+          );
+          color: var(--clr-white);
+          text-align: center;
+          font-weight: bold;
+          box-sizing: border-box;
+          border-radius: 0 0 2em 2em;
+        }
+      }
 
-          li {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2em;
+      .left {
+        display: grid;
+        grid-template-rows: 150px 150px;
+        gap: 1em;
+
+        .img-card {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
           }
 
           p {
-            font-weight: var(--fw-title);
-            font-size: var(--fs-sub);
-            color: var(--clr-black-gray);
-          }
-
-          p:nth-child(2) {
-            font-weight: var(--fw-regular);
-            color: var(--clr-gray);
-            font-size: var(--fs-normal);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0.4em !important;
+            background: linear-gradient(
+              135deg,
+              var(--clr-primary),
+              var(--clr-primary-light)
+            );
+            color: var(--clr-white);
+            text-align: center;
+            font-weight: bold;
+            box-sizing: border-box;
+            border-radius: 0 0 2em 2em;
           }
         }
+      }
 
-        .btn-card {
-          width: 100%;
+      button {
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
 
-          button {
-            padding: 0.8em;
-            background-color: var(--clr-silver);
-            border: none;
-            width: 100%;
+  #banner-product {
+    width: 100%;
+
+    img {
+      width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+  }
+
+  #carousel-product {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    #carouselExample {
+      .carousel-inner {
+        .carousel-item {
+          img {
+            height: 300px;
+            object-fit: cover;
             border-radius: 1em;
-            color: var(--clr-black-gray);
+          }
+        }
+      }
+    }
+  }
+
+  #card-product {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    .card {
+      border-radius: 1em;
+      border: none;
+      box-shadow: var(--shadow-soft);
+      width: 180px !important;
+      img {
+        border-radius: 1em 1em 0 0;
+        height: 180px;
+        width: 180px;
+        object-fit: cover;
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+        padding: 0.5em;
+        align-items: flex-start;
+        p {
+          margin: 0;
+          color: var(--clr-text-main);
+        }
+        .info-card {
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            color: var(--clr-text-muted);
+          }
+          p:nth-child(2) {
+            color: var(--clr-accent-green);
           }
         }
       }
